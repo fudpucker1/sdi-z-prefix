@@ -1,6 +1,6 @@
 require('dotenv').config();
-const cors = require("cors");
-const express = require("express");
+const cors = require('cors');
+const express = require('express');
 const app = express();
 const PORT = 3000;
 const jwt = require('jsonwebtoken');
@@ -36,7 +36,7 @@ app.post('/api/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
     const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
-    res.status(200).json({ token });
+    res.status(200).json({ token, userID: user.id });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
@@ -57,6 +57,20 @@ app.post('/api/items', async (req, res) => {
 app.get('/api/items', async (req, res) => {
   try {
     const items = await knex('items').select('id', 'item_name', 'description', 'quantity');
+    items.forEach(item => {
+      item.description = item.description.length > 100 ? item.description.slice(0, 100) + '...' : item.description;
+    });
+    res.status(200).json(items);
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// Item Retrieval (Multiple Items for a User)
+app.get('/api/items/user/:userId', async (req, res) => {
+  const userId = req.params.userId;
+  try {
+    const items = await knex('items').where({ user_id: userId }).select('id', 'item_name', 'description', 'quantity');
     items.forEach(item => {
       item.description = item.description.length > 100 ? item.description.slice(0, 100) + '...' : item.description;
     });

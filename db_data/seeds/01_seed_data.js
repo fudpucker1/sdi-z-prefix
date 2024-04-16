@@ -20,10 +20,10 @@ exports.seed = async function(knex) {
   ]);
 
   await knex('items').insert([
-    { user_id: 1, item_name: 'Dell S2421HS Monitor', description: 'Full HD 1920 x 1080, 24-Inch 1080p LED, 75Hz, Desktop Monitor with Adjustable Stand, 4ms Grey-to-Grey Response Time, AMD FreeSync, IPS Technology, HDMI, DisplayPort, Silver, 24.0" FHD', quantity: 10 },
-    { user_id: 1, item_name: 'Logitech MX Master 3', description: 'Advanced Wireless Mouse, Ultrafast Scrolling, Ergonomic Design, 4000 DPI, Customization Buttons, USB-C, Bluetooth, Graphite', quantity: 6 },
-    { user_id: 2, item_name: 'Logitech C920x HD Pro Webcam', description: '1080p Video Calling, Stereo Audio, 90-Degree Field of View, HD Light Correction, USB-A, Black', quantity: 8 },
-    { user_id: 2, item_name: 'ASUS ROG Swift PG279Q Gaming Monitor', description: '27-Inch, WQHD 1440p, 165Hz, IPS, G-SYNC, Eye Care, DisplayPort, HDMI, Black', quantity: 8 },
+    {user_id: 1, item_name: 'Dell S2421HS Monitor', description: 'Full HD 1920 x 1080, 24-Inch 1080p LED, 75Hz, Desktop Monitor with Adjustable Stand, 4ms Grey-to-Grey Response Time, AMD FreeSync, IPS Technology, HDMI, DisplayPort, Silver, 24.0" FHD', quantity: 10},
+    {user_id: 1, item_name: 'Logitech MX Master 3', description: 'Advanced Wireless Mouse, Ultrafast Scrolling, Ergonomic Design, 4000 DPI, Customization Buttons, USB-C, Bluetooth, Graphite', quantity: 6},
+    {user_id: 2, item_name: 'Logitech C920x HD Pro Webcam', description: '1080p Video Calling, Stereo Audio, 90-Degree Field of View, HD Light Correction, USB-A, Black', quantity: 8},
+    {user_id: 2, item_name: 'ASUS ROG Swift PG279Q Gaming Monitor', description: '27-Inch, WQHD 1440p, 165Hz, IPS, G-SYNC, Eye Care, DisplayPort, HDMI, Black', quantity: 8},
     {user_id: 3, item_name: 'Sony WH-1000XM4 Wireless Headphones', description: 'Noise Cancelling, Over-Ear, Bluetooth, Alexa Voice Control, Black', quantity: 7},
     {user_id: 3, item_name: 'Elgato Stream Deck', description: '15 Customizable LCD Keys, Adjustable Stand, Live Content Creation Controller, Black', quantity: 9},
     {user_id: 4, item_name: 'Apple AirPods Max', description: 'Over-Ear Headphones, Active Noise Cancellation, Spatial Audio, Sky Blue', quantity: 10},
