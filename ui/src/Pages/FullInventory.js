@@ -1,10 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from './AuthContext';
 
 function FullInventory() {
   const [userInventory, setUserInventory] = useState([]);
-  const { loggedIn } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`http://localhost:3000/api/items`)

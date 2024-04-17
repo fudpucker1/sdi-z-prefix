@@ -22,8 +22,8 @@ function IndividualItem() {
     setEditMode(prevMode => !prevMode);
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setInventoryItem(prevItem => ({
       ...prevItem,
       [name]: value
@@ -113,17 +113,18 @@ function IndividualItem() {
                 </td>
                 <td className="quantity">
                   {editMode ? (
-                    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-                      <input
-                        type="number"
-                        name="quantity"
-                        value={inventoryItem.quantity}
-                        onChange={handleInputChange}
-                      />
-                      <button onClick={handleDelete}>Delete</button>
-                    </div>
+                    <input
+                      type="number"
+                      name="quantity"
+                      value={inventoryItem.quantity}
+                      onChange={handleInputChange}
+                    />
+
                   ) : (
-                    inventoryItem.quantity
+                    <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+                      {inventoryItem.quantity}
+                    <button onClick={handleDelete} style={{ marginLeft: '25px' }}>Delete</button>
+                    </div>
                   )}
                 </td>
               </tr>
@@ -137,12 +138,12 @@ function IndividualItem() {
             ) : (
               <>
                 <button onClick={handleSaveChanges}>Save Changes</button>
-                <button onClick={handleEditModeToggle}>Cancel</button>
+                <button onClick={handleEditModeToggle} style={{ marginLeft: '10px' }}>Cancel</button>
               </>
             )}
           </>
         )}
-        <button onClick={() => navigate(-1)}>Back</button>
+        <button onClick={() => navigate(-1)} style={{ marginLeft: '10px' }}>Back</button>
       </center>
     </div>
   );

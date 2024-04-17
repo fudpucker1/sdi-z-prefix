@@ -1,6 +1,4 @@
-import '../css/Login.css';
 import React from 'react';
-
 
 function Home() {
 

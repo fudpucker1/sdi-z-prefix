@@ -9,6 +9,7 @@ function InventoryManager() {
 
   useEffect(() => {
     if (userID) {
+      console.log(userID)
       fetch(`http://localhost:3000/api/items/user/${userID}`)
         .then(response => response.json())
         .then(data => {
@@ -18,16 +19,16 @@ function InventoryManager() {
     }
   }, [userID, newItemData]);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
     setNewItemData(prevData => ({
       ...prevData,
       [name]: value
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     fetch('http://localhost:3000/api/items', {
       method: 'POST',
       headers: {

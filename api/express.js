@@ -1,11 +1,8 @@
-require('dotenv').config();
 const cors = require('cors');
 const express = require('express');
 const app = express();
 const PORT = 3000;
-const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const secretKey = process.env.JWT_SECRET;
 const knex = require('knex')(require('./knexfile.js')['development']);
 
 app.use(express.json());
@@ -35,8 +32,7 @@ app.post('/api/login', async (req, res) => {
     if (!passwordMatch) {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
-    const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
-    res.status(200).json({ token, userID: user.id });
+    res.status(200).json({ userID: user.id });
   } catch (error) {
     res.status(500).json({ error: 'Internal server error' });
   }
