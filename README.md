@@ -6,11 +6,7 @@ This project builds a simple inventory management application based on several u
 
 ## Run Locally
 
-Clone the project
-
-```
-  git clone https://github.com/fudpucker1/sdi-z-prefix
-```
+Fork and Clone the project
 
 Go to the project directory
 
