@@ -46,8 +46,7 @@ Go to the ui directory, install dependencies, and start web application (port 80
 ```
   cd ..
   cd ui
-  npx create-react-app .
-  npm install js-cookie nodemon
+  npm install nodemon react react-dom react-router-dom react-scripts web-vitals js-cookie
   npm start
 ```
 
