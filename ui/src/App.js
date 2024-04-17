@@ -6,7 +6,8 @@ import Login from './Pages/Login';
 import InventoryManager from './Pages/InventoryManager';
 import NewItem from './Pages/NewItem';
 import IndividualItem from './Pages/IndividualItem';
-import EntireInventory from './Pages/EntireInventory';
+import FullInventory from './Pages/FullInventory';
+import CreateAccount from './Pages/CreateAccount';
 import { AuthContext } from './Pages/AuthContext';
 import HomeIcon from './Pages/images/home-icon.jpg';
 
@@ -33,9 +34,10 @@ function App() {
             </ul>
           ) : (
             <ul>
-            <li className="full-page"><Link to="/full-inventory">Full Inventory</Link></li>
-            <li className="manager-inventory"><Link to="/inventory-manager">Your Inventory</Link></li>
-            <li className="logout-item"><Link to="/" onClick={handleLogout}>Logout</Link></li>
+              <li className="full-page"><Link to="/full-inventory">Full Inventory</Link></li>
+              <li className="manager-inventory"><Link to="/inventory-manager">Your Inventory</Link></li>
+              <li className="create-account"><Link to="/create-account">Create Account</Link></li>
+              <li className="logout-item"><Link to="/" onClick={handleLogout}>Logout</Link></li>
             </ul>
           )}
         </div>
@@ -46,7 +48,8 @@ function App() {
         <Route path='/inventory-manager' element={<InventoryManager/>} />
         <Route path='/new-item' element={<NewItem/>} />
         <Route path='/item/:itemId' element={<IndividualItem/>} />
-        <Route path='/full-inventory' element={<EntireInventory/>} />
+        <Route path='/full-inventory' element={<FullInventory/>} />
+        <Route path='/create-account' element={<CreateAccount/>} />
       </Routes>
     </div>
   );

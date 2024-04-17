@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const [userName, setUserName] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const { setToken, setUserID } = useContext(AuthContext);
+  const { setToken, setUserID, setLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
@@ -27,6 +27,7 @@ function Login() {
         const response = await res.json();
         //setToken(response.token);
         setUserID(response.userID);
+        setLoggedIn(true);
         navigate('/inventory-manager');
       } else {
         const errorMessage = await res.text();

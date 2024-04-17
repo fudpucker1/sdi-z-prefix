@@ -61,3 +61,30 @@
 .navbar ul li {
   margin-right: 20px;
 }
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 8px;
+  border-bottom: 1px solid #dddddd;
+}
+
+th {
+  text-align: left;
+}
+
+.inventory-list {
+  padding-bottom: 10px;
+}
+
+.item-name {
+ width: 25%;
+}
+
+.quantity {
+  width: 10%;
+}
