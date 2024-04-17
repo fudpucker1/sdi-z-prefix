@@ -51,7 +51,6 @@ function IndividualItem() {
   };
 
   const handleDelete = async () => {
-
     if (window.confirm('Are you sure you want to delete this item?')) {
       try {
         const response = await fetch(`http://localhost:3000/api/items/${itemId}`, {
@@ -63,13 +62,11 @@ function IndividualItem() {
         }
 
         navigate(-1)
-
       } catch (error) {
         console.error('Error deleting item:', error);
         alert('Error deleting item. Please try again.');
       }
     }
-
   };
 
   return (
@@ -119,11 +116,10 @@ function IndividualItem() {
                       value={inventoryItem.quantity}
                       onChange={handleInputChange}
                     />
-
                   ) : (
                     <div style={{ display: 'flex', alignItems: 'flex-start' }}>
                       {inventoryItem.quantity}
-                    <button onClick={handleDelete} style={{ marginLeft: '25px' }}>Delete</button>
+                      {loggedIn && <button onClick={handleDelete} style={{ marginLeft: '25px' }}>Delete</button>}
                     </div>
                   )}
                 </td>
