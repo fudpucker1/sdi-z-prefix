@@ -28,7 +28,7 @@ Go to the db_data directory, install dependencies, and populate db with data
 
 ```
   cd db_data
-  npm install knex pg
+  npm install knex pg bcrypt
   npm start
 ```
 
