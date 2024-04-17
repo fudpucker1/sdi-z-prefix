@@ -1,7 +1,7 @@
 
 # SDI-Z-PREFIX
 
-This projects builds a simple inventory management application based off several user stories. The purpose of this project is to provide proff that I am capable of developing a full CRUD app for my Z prefix.
+This project builds a simple inventory management application based on several user stories. The purpose of this project is to provide proof that I am capable of developing a full CRUD application for my Z prefix.
 
 
 ## Run Locally
