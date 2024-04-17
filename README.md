@@ -41,7 +41,7 @@ Go to the api directory, install dependencies, and start express server (port 30
   npm start
 ```
 
-Go to the us directory, install dependencies, and start web application (port 8080)
+Go to the ui directory, install dependencies, and start web application (port 8080)
 
 ```
   cd ..
