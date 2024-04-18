@@ -45,4 +45,4 @@ Go to the ui directory, install dependencies, and start web application (port 80
   npm install nodemon react react-dom react-router-dom react-scripts web-vitals js-cookie
   npm start
 ```
-
+User Account information can be found in the 01_seed_data.js file located in the following directory: ./db_data/seeds/
