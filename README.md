@@ -17,7 +17,7 @@ Go to the project directory
 Spin up postgres docker container
 
 ```
-docker-compose up
+  docker-compose up
 ```
 
 Go to the db_data directory, install dependencies, and populate db with data
